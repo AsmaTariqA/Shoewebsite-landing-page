@@ -1,38 +1,79 @@
-.App {
+/* Base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.nav {
+  color: rgb(83, 58, 226);
+  padding: 20px 0;
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-list li {
+  display: inline;
+  margin-right: 25px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-list li a {
+  font-family: "Cutive Mono", monospace;
+  color: #3a87cf;
+  text-decoration: none;
+  font-size: 19px;
+  margin: 22px;
+}
+
+.nav-list li a:hover {
+  color: rgb(48, 123, 189);
+}
+
+.nav-list li.buynow::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-list li.buynow:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+}
+
+.addtocart {
+  margin-left: 79px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .nav-list {
+    flex-wrap: wrap;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-list li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .addtocart {
+    margin-left: 0;
   }
 }

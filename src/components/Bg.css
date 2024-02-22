@@ -1,0 +1,139 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* Hide any overflow */
+  background-color: #c2e2ff;
+}
+
+#home {
+  object-fit: cover;
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Use viewport height */
+  position: relative; /* Ensure positioning context */
+}
+
+.circle {
+  width: 55vw; /* Use 55% of the viewport width */
+  height: 55vw; /* Use 55% of the viewport width */
+  background-color: #8ac6ff;
+  border-radius: 50%; /* Use 50% for a circle */
+  position: absolute;
+  top: 85%; /* Position vertically at 85% */
+  left: 20%; /* Position horizontally at 20% */
+  transform: translate(-50%, -50%); /* Center the circle */
+  overflow: hidden; /* Hide any overflow */
+}
+
+.circle2 {
+  width: 35vw; /* Use 35% of the viewport width */
+  height: 35vw; /* Use 35% of the viewport width */
+  background-color: #3a87cf;
+  border-radius: 50%; /* Use 50% for a circle */
+  position: absolute;
+  top: 50%; /* Position vertically at 50% */
+  left: 97%; /* Position horizontally at 97% */
+  transform: translate(-50%, -50%); /* Center the circle */
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); /* Clip the image to create a mask */
+}
+
+.image img {
+  max-width: 100%; /* Ensure the image does not exceed its container's width */
+  max-height: 100%; /* Ensure the image does not exceed its container's height */
+}
+
+.text {
+  position: absolute;
+  top: 20%;
+}
+
+.big-heading {
+  position: absolute;
+  left: 30%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 6em;
+  color: transparent; /* Hide the text */
+  -webkit-text-stroke: 4px hwb(6 47% 2%); /* Add a white stroke around the text */
+  z-index: 10; /* Ensure text is above other elements */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column; /* Display links in a column */
+  align-items: left; /* Center links horizontally */
+}
+
+.social-links a {
+  margin: 18px 0; /* Adjust spacing between icons */
+  color: #3a87cf; /* Set icon color */
+  font-size: 24px; /* Set icon size */
+  margin-left: 40px;
+}
+
+.social-links a:hover {
+  color: #8fa3db; /* Change icon color on hover */
+}
+
+.bottom-text {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  font-size: 27px;
+  padding: 12px;
+  font-family: "Cutive Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  color: #3a87cf;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .big-heading {
+      font-size: 3.7em;
+      top: -3%;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .bottom-text {
+      left: 10%;
+      top: 19%;
+      font-size: 20px;
+      word-spacing: 23px;
+  }
+
+  .circle {
+      top: 80%;
+      width: 44vh;
+      height: 44vh;
+  }
+
+  .circle2 {
+      width: 30vh;
+      height: 30vh;
+      left: 80%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+  }
+
+  .social-links a {
+      margin: 1px; /* Adjust spacing between icons */
+      margin-left: 9px;
+      margin-top: 130px;
+  }
+}
+
+    
+  
